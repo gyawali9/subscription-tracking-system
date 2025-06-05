@@ -28,7 +28,7 @@ app.use("/api/v1/subscriptions", subscriptionRouter);
 app.use(errorMiddleware);
 
 app.get("/", (req, res) => {
-  res.send("Welcome to subscriptio tracker");
+  res.send("Welcome to subscription tracker");
 });
 
 app.listen(PORT, async () => {
