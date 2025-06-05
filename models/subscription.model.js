@@ -10,8 +10,8 @@ const subscriptionSchema = new mongoose.Schema(
       maxLength: 10,
     },
     price: {
-      type: String,
-      required: [true, "Scbcription price is required"],
+      type: Number,
+      required: [true, "Subscription price is required"],
       min: [0, "Price must be greater than 0"],
     },
     currency: {
@@ -74,7 +74,7 @@ const subscriptionSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// Auto Calculate nenewal date if missing
+// Auto Calculate renewal date if missing
 subscriptionSchema.pre("save", function (next) {
   if (!this.renewalDate) {
     const renewalPeriods = {
