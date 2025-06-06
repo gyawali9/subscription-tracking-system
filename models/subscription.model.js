@@ -7,7 +7,7 @@ const subscriptionSchema = new mongoose.Schema(
       required: [true, "Subscription is required"],
       trim: true,
       minLength: 2,
-      maxLength: 10,
+      maxLength: 30,
     },
     price: {
       type: Number,
@@ -15,12 +15,12 @@ const subscriptionSchema = new mongoose.Schema(
       min: [0, "Price must be greater than 0"],
     },
     currency: {
-      name: String,
+      type: String,
       enum: ["USD", "EUR", "GBP"],
       default: "USD",
     },
     frequency: {
-      name: String,
+      type: String,
       enum: ["daily", "weekly", "monthly", "yearly"],
     },
     category: {
